@@ -1,5 +1,5 @@
 # Unity
-Unity exercises as part of the lecture "Development of Multimedia Systems"
+Unity Übungsaufgaben als Teil der Lehrveranstaltung "Entwicklung von Multimediasystemen" im SoSe 2020 , HTW Berlin
 
 ## Abgabe 00
 
