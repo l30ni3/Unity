@@ -425,9 +425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1116636974}
-  offsetPosition: {x: 0, y: 1, z: -5}
-  offsetPositionSpace: 1
-  lookAt: 1
 --- !u!1 &1116636970 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4753294475079776078, guid: 1c7eb25c8f73241c2acb264e014112e2,
@@ -452,6 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac153bd3eefa4c4db708b5ecc29158c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
 --- !u!1 &1858116413
 GameObject:
   m_ObjectHideFlags: 0
