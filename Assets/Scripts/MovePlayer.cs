@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     public float moveSpeed;
+    public float rotAngle;
     
     // Start is called before the first frame update
     void Start()
@@ -15,12 +16,17 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxisRaw ("Horizontal");
-        float moveVertical = Input.GetAxisRaw ("Vertical");
+        float moveHorizontal= Input.GetAxis("Horizontal") * Time.deltaTime;
+        rotAngle += moveHorizontal;
+        float moveVertical = Input.GetAxis ("Vertical");
+        
   
-        Vector3 movement = new Vector3(moveSpeed * moveHorizontal* Time.deltaTime, 0.0f, moveSpeed * moveVertical * Time.deltaTime);
-        transform.rotation = Quaternion.LookRotation(movement);
+        // moveHorizontal muss aus dem Bewegungsvektor raus
+        Vector3 movement = new Vector3(0.0f, 0.0f, moveSpeed * moveVertical * Time.deltaTime);
+        // In Quaternion.LookRotation() musst du einen Richtungsvektor einsetzen, keinen Bewegungsvektor
+        Vector3 targetDirection = new Vector3( Mathf.Sin(rotAngle), 0, Mathf.Cos(rotAngle));
+        transform.rotation = Quaternion.LookRotation(targetDirection);
   
-        transform.Translate (movement, Space.World);
+        transform.Translate (movement);
     }
 }

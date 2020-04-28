@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameScript : MonoBehaviour
 {
     public Transform myPrefab;
-    public int numberOfObjects = 20;
+    public int numberOfObjects = 10;
     public float radius = 5f;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class GameScript : MonoBehaviour
         for (int i = 0; i < numberOfObjects; i++)
         {
             float x = UnityEngine.Random.Range(-10f, 10f);
-            float y = UnityEngine.Random.Range(1f, 5f);
+            float y = 1;
             float z = UnityEngine.Random.Range(-10f, 10f);
             Vector3 pos = new Vector3(x, y, z);
             float angleX = UnityEngine.Random.Range(-360f, 360f);
