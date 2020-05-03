@@ -37,6 +37,6 @@ MonoBehaviour:
     arcoreRequirement: 1
     autoImportArcore: 1
   playmode:
-    playModeType: 0
+    playModeType: 1
   webcam:
     renderTextureLayer: 30

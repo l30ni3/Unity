@@ -52,3 +52,13 @@ Update Mode: mergeDefaultDependencies
 The following packages were added:
   com.unity.ext.nunit@1.0.0
   com.unity.package-manager-ui@2.2.0
+
+=== Sat May  2 11:26:28 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ide.vscode from version 1.1.4 to 1.2.0
+The following packages were removed:
+  com.unity.package-manager-ui@2.2.0
