@@ -95,3 +95,14 @@ Links/Rechts Rotation)
 12. Das Menü soll sich auch über erneutes betätigen der Esc-Taste schließen lassen
 13. Hinweis: FixedUpdate() wird bei Time.timeScale = 0;nicht mehr aufgerufen, führe die Pausenfunktion stattdessen in Update() aus
 
+#### Aufgabe (Shader Graph)
+
+1. Fügt die Universal Render Pipeline zum laufenden Projekt hinzu
+2. Erstellt einen Shader mit dem Shader-Graph
+3. Der Shader soll einen animierten Leuchteffekt beinhalten siehe Beispiel
+4. Erstelle ein neues Material für die Collectables und setzt den erstellten Shader für das Material
+
+#### Aufgabe (VFX Graph)
+
+1. Integriere den VFX-Graphen in das laufende Projekt
+2. Erstelle einen VGX-Graph und erzeuge ein paar Partikel welche um die Collectables erscheinen. Die Farbe der Partikel soll über den Inspektor konfigurierbar sein
