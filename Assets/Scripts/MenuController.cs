@@ -13,11 +13,12 @@ public class MenuController : MonoBehaviour
             gamePaused = !gamePaused;
  
         //Now we enable and disable the game object!
-        if(gamePaused)
+        if(gamePaused){
             Time.timeScale = 0;
-            canvasObj.SetActive(true);
+            Menu.SetActive(true);
+        }
         else
-            canvasObj.SetActive(false);
+            Menu.SetActive(false);
  
     }
 }

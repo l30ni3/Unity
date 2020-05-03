@@ -20,8 +20,6 @@ public class MovePlayer : MonoBehaviour
         rotAngle += moveHorizontal;
         float moveVertical = Input.GetAxis ("Vertical");
         
-  
-        // moveHorizontal muss aus dem Bewegungsvektor raus
         Vector3 movement = new Vector3(0.0f, 0.0f, moveSpeed * moveVertical * Time.deltaTime);
         // In Quaternion.LookRotation() musst du einen Richtungsvektor einsetzen, keinen Bewegungsvektor
         Vector3 targetDirection = new Vector3( Mathf.Sin(rotAngle), 0, Mathf.Cos(rotAngle));

@@ -5,8 +5,7 @@ using Vuforia;
 
 public class ButtonEventHandler : MonoBehaviour, IVirtualButtonEventHandler{
 
-private GameObject Player;
-public Transform target;
+public Transform Player;
 
 void Start() {
     // Search for all Children from this ImageTarget with type VirtualButtonBehaviour
@@ -21,15 +20,21 @@ public void OnButtonPressed(VirtualButtonBehaviour vb){
     switch (vb.VirtualButtonName){
         case "Up":
             Debug.Log("Button Up");
+            Player.Transform.Translate(Vector3.forward * 15.0f * Time.deltaTime, Space.World);
         break;
         case "Down":
             Debug.Log("Button Down");
+            Player.Transform.Translate(-Vector3.forward * 15.0f * Time.deltaTime, Space.World);
         break;
         case "Left":
-            Player.transform.Rotate (new Vector3(0, -(Time.deltaTime * 1000), 0));
+            Debug.Log("Button Left");
+            Player.transform.position += Vector3.left * 15.0f * Time.deltaTime;
+            // Player.transform.Rotate (new Vector3(0, -(Time.deltaTime * 1000), 0));
         break;
         case "Right":
-            Player.transform.Rotate (new Vector3(0, Time.deltaTime * 1000, 0));
+            Debug.Log("Button Right");
+            Player.transform.position += Vector3.right * 15.0f * Time.deltaTime;
+            // Player.transform.Rotate (new Vector3(0, Time.deltaTime * 1000, 0));
         break;
     }
 }
