@@ -76,3 +76,22 @@ erzeugen
 Links/Rechts Rotation)
 2. Virtual Buttons sind normalerweise unsichtbar, kombiniere diese mit UserInterfaceButtons von Unity und lass diese auf dem ImageTarget darstellen
 
+
+## Abgabe 03
+
+#### Aufgabe (2D User-Interfaces)
+
+1. Baue ein 2D-Pausen-Menü in das Spiel ein
+2. Erstelle ein Canvas mit zwei Buttons
+3. Benenne die Buttons mit Return für schließen des Pausen-Menüs und Restart für Neustarten des Spiels
+4. Erstelle ein neues leeres GameObject mit namen MenuManager
+5. Erstelle ein neues Script und füge es dem MenuManager hinzu
+6. Füge dem Script eine public Variable Menu vom Typ GameObject hinzu
+7. Verbinde die Menu-Variable mit dem Canvas über die Editor-Oberfläche
+8. Das Pausenmenü(Canvas) soll aufgerufen werden mit der Esc-Taste (KeyCode.Escape), das Canvas kann mit setActive() ein und ausgeblendet werden
+9. Mit Aufruf des Pausen-Menüs soll das Spiel pausieren mit Time.timeScale = 0;
+10. Durch klick auf dem Button Restart soll die Szene neugestartet werden verwende dazu SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+11. Mittels Return soll das Pausen-Menü geschlossen werden und das Spiel soll weiter gehen
+12. Das Menü soll sich auch über erneutes betätigen der Esc-Taste schließen lassen
+13. Hinweis: FixedUpdate() wird bei Time.timeScale = 0;nicht mehr aufgerufen, führe die Pausenfunktion stattdessen in Update() aus
+
