@@ -106,3 +106,36 @@ Links/Rechts Rotation)
 
 1. Integriere den VFX-Graphen in das laufende Projekt
 2. Erstelle einen VGX-Graph und erzeuge ein paar Partikel welche um die Collectables erscheinen. Die Farbe der Partikel soll über den Inspektor konfigurierbar sein
+
+## Abgabe 03
+
+#### Aufgabe (DOTS)
+
+1. Konvertiere das Projekt mit Stand aus Abgabe 1 oder 3 zum Teil in das ECS-System, installiere dazu die Packages DOTS-Editor und Hybrid-Renderer
+2. Erzeuge eine Komponente PlayerComponent welche folgenden Variablen beinhaltet:
+- Speed (float) – Setzt die Bewegungsgeschwindigkeit des Spielers
+- RotationAngle(float) – Speichert den aktuellen Rotationswinkel
+3. Füge die PlayerComponent dem Player-GameObject hinzu (Hinweis: [GenerateAuthoringComponent] in der Komponente setzen
+4. Aktiviere beim Player-GameObject das „Convert To Entity“ –Feld (Oben unter dem GameObject-Namen)
+5. Erzeuge ein System PlayerBehaviorSystem, in dem System soll die Steuerung des Players implementiert werden
+6. Innerhalb der OnUpdate()-Methode soll eine Entities.ForEach()-Lambdablock generiert werden. Folgende Komponenten sollen als Referenz (mit dem ref-parameter) übergeben werden:
+- PlayerComponent
+- Translation
+- Rotation
+7. Über das PlayerComponent kann auf die rotationAngle-Variable zugegriffen werden. rotationAngle kann mit dem Wert aus Input.GetAxis("Horizontal") addiert werden.
+8. Erzeuge aus den Winkel einen Richtungsvektor mit float3 targetDirection = new float (math.Sin(rotationAngle), 0, math.cos(rotationAngle));
+9. Erzeuge aus dem Richtungsvektor eine Rotation mit quaternion.LookRotationSafe()und übergib diese an die Rotation-Komponente
+10. Update die Position der Translation-Komponente indem du den Richtungsvektor mit dem speed der PlayerComponent und dem Wert aus Input.GetAxis(„Vertical") multiplizierst
+11. Erzeuge eine neue Komponente SpawnCollectableComponent welche folgende Variablen hat
+- Anzahl der Collectables (int)
+- CollectablePrefab (Entity)
+12. Erzeuge ein neues leeres GameObject und zieh die SpawnCollectableComponent auf das GameObject
+13. Setz das Feld „Convert to Entity“ für das GameObject
+14. Erzeuge ein System SpawnCollectableSystem welches die Collectables als Entitäten erzeugt
+- Das GameObject soll nicht mehr in der Szenenhierachie erscheinen
+- Mögliche Kollisionen zwischen den Collectables müssen nicht abgefangen werden
+15. Für die zufällige Positionierung verwende die Unity.Mathematics.Random-Klasse
+16. Die Collectable-Entitäten erhalten eine neue Komponente mit den Namen CollectedComponent
+17. In der CollectedComponent wird als Member ein boolean isCollected definiert.
+18. Das Verhalten der Collectables soll über ein zweites System gemanaged werden, erzeuge hierzu ein zweites System CollectableBehaviorSystem
+19. Das Verhalten sollte mindestens eine Rotation beinhalten (Rotation-Komponente) 
