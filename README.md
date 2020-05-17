@@ -107,7 +107,7 @@ Links/Rechts Rotation)
 1. Integriere den VFX-Graphen in das laufende Projekt
 2. Erstelle einen VGX-Graph und erzeuge ein paar Partikel welche um die Collectables erscheinen. Die Farbe der Partikel soll über den Inspektor konfigurierbar sein
 
-## Abgabe 03
+## Abgabe 04
 
 #### Aufgabe (DOTS)
 
