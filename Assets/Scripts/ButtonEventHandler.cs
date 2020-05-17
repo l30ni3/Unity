@@ -29,12 +29,12 @@ public class ButtonEventHandler : MonoBehaviour, IVirtualButtonEventHandler{
             case "Left":
                 Debug.Log("Button Left");
                 Player.transform.position += Vector3.left * 15.0f * Time.deltaTime;
-                // Player.transform.Rotate (new Vector3(0, -(Time.deltaTime * 1000), 0));
+                Player.transform.Rotate (new Vector3(0, -90, 0));
             break;
             case "Right":
                 Debug.Log("Button Right");
                 Player.transform.position += Vector3.right * 15.0f * Time.deltaTime;
-                // Player.transform.Rotate (new Vector3(0, Time.deltaTime * 1000, 0));
+                Player.transform.Rotate (new Vector3(0, 90, 0));
             break;
         }
     }
