@@ -6,6 +6,11 @@ using Vuforia;
 public class ButtonEventHandler : MonoBehaviour, IVirtualButtonEventHandler{
 
     public Transform Player;
+    private bool MoveForward = false;
+    private bool MoveBack = false;
+    private bool TurnLeft = false;
+    private bool TurnRight = false;
+    float speed = 2;
 
     void Start() {
         // Search for all Children from this ImageTarget with type VirtualButtonBehaviour
@@ -16,28 +21,46 @@ public class ButtonEventHandler : MonoBehaviour, IVirtualButtonEventHandler{
         }
     }
 
+    void Update()
+    {
+        if (MoveForward != false)
+            Player.position += Vector3.forward * speed;
+        else if (MoveBack != false)
+            Player.position += -Vector3.forward * speed;
+        else if (TurnLeft != false)
+            Player.Rotate(-Vector3.up * speed);
+        else if (TurnRight != false)
+            Player.Rotate(Vector3.up * speed);
+    }
+
+
     public void OnButtonPressed(VirtualButtonBehaviour vb){ 
+        MoveForward = true; 
         switch (vb.VirtualButtonName){
             case "Up":
                 Debug.Log("Button Up");
-                Player.transform.Translate(Vector3.forward * 15.0f * Time.deltaTime, Space.World);
+                MoveForward = true; 
             break;
             case "Down":
                 Debug.Log("Button Down");
-                Player.transform.Translate(-Vector3.forward * 15.0f * Time.deltaTime, Space.World);
+                MoveBack = true; 
             break;
             case "Left":
                 Debug.Log("Button Left");
-                Player.transform.position += Vector3.left * 15.0f * Time.deltaTime;
-                Player.transform.Rotate (new Vector3(0, -90, 0));
+                TurnLeft = true; 
             break;
             case "Right":
                 Debug.Log("Button Right");
-                Player.transform.position += Vector3.right * 15.0f * Time.deltaTime;
-                Player.transform.Rotate (new Vector3(0, 90, 0));
+                TurnRight = true; 
             break;
         }
     }
 
-    public void OnButtonReleased(VirtualButtonBehaviour vb) { }
+    public void OnButtonReleased(VirtualButtonBehaviour vb)
+    {
+       MoveForward = false; 
+       MoveBack = false;
+       TurnLeft = false;
+       TurnRight = false;
+    }
 }
